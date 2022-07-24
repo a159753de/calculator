@@ -5,6 +5,8 @@
     將數字轉為字串後用字串的串接方式將數字串起來
 2.按下運算紐 > 數字跳至上面區塊，並後面會出現運算紐，先前輸入的區塊變成空的
 
+只有跟著影片做 https://www.youtube.com/watch?v=j59qQ7YWLxw&t=471s
+文字版 https://www.section.io/engineering-education/building-a-calculator-a-javascript-project-for-beginners/
 */
 
 class Calculator {
