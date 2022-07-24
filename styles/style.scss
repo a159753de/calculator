@@ -1,0 +1,56 @@
+*,
+// ::before 是在原本的元素「之前」加入內容，::after 則是在「之後」加入內容
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: Gotham Rounded, sans-serif;
+  font-weight: normal;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right, #cbce91ff, #ea738dff);
+}
+
+div.calculator-grid {
+  display: grid;
+  justify-content: center;
+  align-content: center; //align-items 調整的是items的分布，而align-content調整的是線的分布
+  min-height: 100vh;
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+  button {
+    cursor: pointer;
+    font-size: 2rem;
+    border: 1px, solid #ffffff;
+    outline: none; //邊框線，與border很像，但outline不能做圓角
+    background-color: rgba(255, 255, 255, 0.75);
+  }
+  button:hover {
+    background-color: #a9a9a9;
+  }
+  .span-two {
+    grid-column: span 2;
+    color: #adf802;
+    background-color: rgba(139, 0, 139, 0.8);
+  }
+  .output {
+    grid-column: 1/-1;
+    background-color: rgba(0, 0, 0, 0.75);
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 10px;
+    word-wrap: break-word; //過長的字會自動跑到下一行
+    word-break: break-all; //word-break主要是用來設定亞洲語言的斷行規則，而使用break-all則可讓非亞洲語言任意斷行，1字母就是1個字
+    .previous-operand {
+      color: rgba(255, 255, 255, 0.75);
+      font-size: 1.5rem;
+    }
+    .current-operand {
+      color: white;
+      font-size: 2.5rem;
+    }
+  }
+}
